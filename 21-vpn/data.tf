@@ -3,7 +3,7 @@ data "aws_ami" "joindevops"{
     most_recent=true
     filter {
         name="name"
-        values=[OpenVPN Access Server Community Image*]
+        values=[OpenVPN Access Server Community Image-*]
     }
     filter {
         name="root-device-type"
