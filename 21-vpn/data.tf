@@ -1,11 +1,11 @@
 data "aws_ami" "joindevops" {
-  #owners      = ["498192040101"]
+  owners      = ["498192040101"]
   most_recent = true
 
-  filter {
+  /* filter {
     name   = "name"
     values = ["OpenVPN Access Server Community Image-*"]
-  }
+  } */
 
   filter {
     name   = "root-device-type"
@@ -18,8 +18,8 @@ data "aws_ami" "joindevops" {
   }
 }
 
-data "aws_ssm_parameter" "openvpn_sg_id"{
-    name="/${var.project_name}/${var.environment}/openvpn_sg_id"
+data "aws_ssm_parameter" "open_vpn_sg_id"{
+    name="/${var.project_name}/${var.environment}/open_vpn_sg_id"
 }
 data "aws_ssm_parameter" "public_subnet_ids"{
     name="/${var.project_name}/${var.environment}/public_subnet_ids"
