@@ -1,18 +1,21 @@
-data "aws_ami" "joindevops"{
-    owners=["498192040101"]
-    most_recent=true
-    filter {
-        name="name"
-        values=[OpenVPN Access Server Community Image-*]
-    }
-    filter {
-        name="root-device-type"
-        values=["ebs"]
-    }  
-    filter {
-        name="virtualization-type"
-        values=["hvm"]
-    }  
+data "aws_ami" "joindevops" {
+  owners      = ["498192040101"]
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["OpenVPN Access Server Community Image-*"]
+  }
+
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
 }
 
 data "aws_ssm_parameter" "openvpn_sg_id"{
