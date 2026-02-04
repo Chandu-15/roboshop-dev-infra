@@ -272,7 +272,7 @@ resource "aws_security_group_rule" "open_vpn_1194" {
 }
 
 resource "aws_security_group_rule" "open_vpn_components" {
-  for each= local.vpn_ingress_rules
+  for_each= local.vpn_ingress_rules
   type              = "ingress"
   security_group_id = each.value.sg_id
   source_security_group_id=local.open_vpn_sg_id

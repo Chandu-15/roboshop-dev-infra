@@ -1,11 +1,11 @@
 data "aws_ami" "joindevops" {
-  owners      = ["498192040101"]
+  owners      = ["679593333241"]
   most_recent = true
 
-  /* filter {
+  filter {
     name   = "name"
-    values = ["OpenVPN Access Server Community Image-*"]
-  } */
+    values = ["OpenVPN Access Server Community Image-fe8020db-*"]
+  }
 
   filter {
     name   = "root-device-type"
